@@ -1,0 +1,36 @@
+﻿@model Authors
+@{
+    ViewData["Title"] = "Author's Details";
+}
+
+<div class="bar">
+
+    <a class="btn btn-outline-success" asp-action="Index" asp-controller="Authors">Go Back</a>
+
+</div>
+
+
+<h1>Author: @Model.AuthorName Books</h1>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Edition</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in @ViewBag.Books)
+        {
+            <tr>
+                <td>@book.BookID</td>
+                <td>@book.Title</td>
+                <td>@book.Edition</td>
+                <td>@book.Authors.AuthorName</td>
+            </tr>
+        }
+    </tbody>
+</table>

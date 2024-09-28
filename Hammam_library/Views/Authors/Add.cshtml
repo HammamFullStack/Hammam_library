@@ -1,0 +1,17 @@
+﻿@model Authors
+@{
+    ViewData["Title"] = "Add an Author";
+}
+
+<form class="form-width" asp-action="Add" asp-controller="Authors" method="post">
+
+    <div class="form-group">
+        <label asp-for="AuthorName">Author Name</label>
+        <input class="form-control" asp-for="AuthorName" type="text" name="AuthorName" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Add Author</button>
+    <br />
+    <br />
+    <a class="btn btn-outline-danger" asp-controller="Authors" asp-action="Index">Cancel</a>
+</form>

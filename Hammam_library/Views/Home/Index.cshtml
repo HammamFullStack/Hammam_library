@@ -1,0 +1,22 @@
+﻿@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="">
+    <h1 class="display-4">Welcome</h1>
+    <h2>to Hammam Library</h2>
+    <p>where every book in all the world in <em>one place</em>.</p>
+    @if (Context.Session.GetString("name") == null)
+    {
+        <a class="btn btn-success" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+    }
+    else
+    {
+        <a class="nav-link text-dark btn btn-outline-success d-inline" asp-area="" asp-controller="Users" asp-action="ChangePassword">Change Password</a>
+        <a class="nav-link text-dark btn btn-outline-success d-inline" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
+    }
+    <hr class="w-50 bg-success"/>
+    
+    <img src='https://static.vecteezy.com/system/resources/previews/014/426/260/non_2x/wood-ladder-on-stack-books-icon-isometric-style-vector.jpg' class="position-relative" style="left:65%; bottom:12em" width="500px" height="auto"/>
+</div>
